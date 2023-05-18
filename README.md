@@ -26,6 +26,7 @@ Head of the dataframe before cleaning for analysis:
 |              14 |             4.78 | more          |
 |              11 |             5    | more          |
 |               4 |             5    | less          |
+
 Head of dataframe after cleaning for analysis:
 
 #### Univariate Analysis
