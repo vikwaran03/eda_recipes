@@ -17,7 +17,11 @@ Steps taken to clean dataset for EDA:<br>
 4. Creating another column for analysis purposes, 'amount_ing', which bins the number of ingredients used in a recipe to either less (<= 9 ingredients total) or more (>9 ingredients total). This step is crucial for the comparison addressed in the main question by splitting the number of ingredients into two groups. 
 
 Head of the dataframe before cleaning for analysis:
-```py
-print(df.head().to_markdown(index=False))
-```
+| Quarter     |   Count |
+|:------------|--------:|
+| Fall 2020   |       3 |
+| Winter 2021 |       2 |
+| Spring 2021 |       6 |
+| Summer 2021 |       4 |
+| Fall 2021   |      55 |
 Head of dataframe after cleaning for analysis:
