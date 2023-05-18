@@ -16,7 +16,7 @@ Steps taken to clean dataset for EDA:<br>
 3. Rounding all values in average_rating to 2 decimal places for easier visualization
 4. Creating another column for analysis purposes, 'amount_ing', which bins the number of ingredients used in a recipe to either less (<= 9 ingredients total) or more (>9 ingredients total). This step is crucial for the comparison addressed in the main question by splitting the number of ingredients into two groups. 
 
-Head of the dataframe before cleaning for analysis:
+Head of the dataframe before cleaning for analysis:  <br>
 |   n_ingredients |   average_rating | ingredients   |
 |----------------:|-----------------:|:--------------|
 |               3 |             4.75 | less          |
