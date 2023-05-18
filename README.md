@@ -31,7 +31,7 @@ Head of dataframe after cleaning for analysis:
 
 #### Univariate Analysis
 
-<iframe src="ua1.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="eda_recipes/assets/ua1.html" width=800 height=600 frameBorder=0></iframe>
 
 #### Bivariate Analysis
 
