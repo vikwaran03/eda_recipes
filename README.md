@@ -10,13 +10,28 @@ The initial dataframe that my project takes into account has shape (234429 rows 
 
 ### Cleaning and EDA:
 
+#### Data Cleaning
 Steps taken to clean dataset for EDA:<br>
 1. Grouping by recipe name and aggregating the average rating and number of ingredients for each recipe
 2. Changing the data type of number of ingredients from float to int, since it is not possible to have fractions of an ingredient (ex. 0.5 carrot is still considered 1 ingredient, not 0.5 ingredient)
 3. Rounding all values in average_rating to 2 decimal places for easier visualization
 4. Creating another column for analysis purposes, 'amount_ing', which bins the number of ingredients used in a recipe to either less (<= 9 ingredients total) or more (>9 ingredients total). This step is crucial for the comparison addressed in the main question by splitting the number of ingredients into two groups. 
 
-Head of the dataframe before cleaning for analysis:  <br>
+Head of the dataframe before cleaning for analysis:
 
-'|   n_ingredients |   average_rating | ingredients   |\n|----------------:|-----------------:|:--------------|\n|               3 |             4.75 | less          |\n|               3 |             5    | less          |\n|              14 |             4.78 | more          |\n|              11 |             5    | more          |\n|               4 |             5    | less          |'
+|   n_ingredients |   average_rating | ingredients   |
+|----------------:|-----------------:|:--------------|
+|               3 |             4.75 | less          |
+|               3 |             5    | less          |
+|              14 |             4.78 | more          |
+|              11 |             5    | more          |
+|               4 |             5    | less          |
 Head of dataframe after cleaning for analysis:
+
+#### Univariate Analysis
+
+
+#### Bivariate Analysis
+
+
+#### Interesting Aggregates
