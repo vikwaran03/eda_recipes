@@ -32,8 +32,25 @@ Head of the dataframe after cleaning for analysis:
 #### Univariate Analysis
 <iframe src="assets/ua2.html" width=800 height=600 frameBorder=0></iframe>
 
+The histogram shown above shows the distribution of the 'n_ingredients' column for univariate analysis. This plot is very interesting since it seems to follow a general normal bell curve, with a little right skew. 
+
 #### Bivariate Analysis
 <iframe src="assets/ba2.html" width=800 height=600 frameBorder=0></iframe>
 
+The above box plot shows the statistics for two groups (less vs. more ingredients) when compared by the values of average_ratings. The bivariate analysis is between the 'amount_ing' column, which was created according to the steps listed above, and the 'average_rating' column. 
+
 
 #### Interesting Aggregates
+
+Result of Pivot Table: (first column is n_ingredients)
+
+|   n_steps |         1 |       3 |       5 |       7 |       9 |
+|----------:|----------:|--------:|--------:|--------:|--------:|
+|         1 | nan       | 4.79517 | 4.76132 | 4.64794 | 4.78049 |
+|         2 |   5       | 4.75346 | 4.7334  | 4.74516 | 4.73867 |
+|         3 |   5       | 4.66067 | 4.73608 | 4.70277 | 4.72598 |
+|         4 |   4.66667 | 4.72085 | 4.74327 | 4.6781  | 4.7213  |
+|         5 |   4.25    | 4.70573 | 4.6857  | 4.65083 | 4.60845 |
+
+
+The above pivot table has index values of n_ingredients, not shown in table, column values of n_steps. The actual values in the table are aggregate means of average_ratings for each grouping of (n_ingredients, n_steps) in the pivot table. With this table, we can look at how average rating values change based on different number of steps and amount of ingredient used. 
