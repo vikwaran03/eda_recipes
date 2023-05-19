@@ -54,3 +54,19 @@ Result of Pivot Table: (first column is n_ingredients)
 
 
 The above pivot table has index values of n_ingredients, not shown in table, column values of n_steps. The actual values in the table are aggregate means of average_ratings for each grouping of (n_ingredients, n_steps) in the pivot table. With this table, we can look at how average rating values change based on different number of steps and amount of ingredient used. 
+
+### Assessment of Missingness
+
+#### NMAR Analysis
+
+#### Missingness Dependency
+<iframe src="assets/miss2.html" width=800 height=600 frameBorder=0></iframe>
+
+### Hypothesis Testing
+
+#### Running a Permutation Test
+
+TEXT
+
+<iframe src="assets/ptest.html" width=800 height=600 frameBorder=0></iframe>
+
