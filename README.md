@@ -1,10 +1,11 @@
-# Exploring the popularity of different recipes
+# Exploring the popularity of different recipes 
 
 ### Introduction:
 
 The dataset considered in this project is the result of merging two datasets that were originally scraped from [food.com](https://www.food.com/). The first dataset contained information regarding the different recipes, and the second contained reviews and ratings of those recipes. When these two datasets were merged, the resulting dataframe can be used to answer many such questions regarding how different recipes are preffered, based on various variables. Taking this into account, my project will focus on the following question: <br>
 
-<center> <i>How does the number of ingredients used affect the average rating of any given recipe?</i> </center><br>
+<center> <i>Do recipes that require more ingredients tend to have higher average_ratings than recipes that require less ingredients?</i> </center><br>
+
 
 The initial dataframe that my project takes into account has shape (234429 rows × 18 columns), after merging. Of these 18 columns, my question is heavily on 3 columns: 'name' (recipe name), 'n_ingredients' (number of ingredients in recipe), and 'average_rating' (average rating of recipe). 
 
@@ -29,10 +30,10 @@ Head of the dataframe after cleaning for analysis:
 
 
 #### Univariate Analysis
-
-<iframe src="assets/ua1.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/ua2.html" width=800 height=600 frameBorder=0></iframe>
 
 #### Bivariate Analysis
+<iframe src="assets/ba2.html" width=800 height=600 frameBorder=0></iframe>
 
 
 #### Interesting Aggregates
