@@ -1,3 +1,5 @@
+<title> HI </title>
+
 # Exploring the popularity of different recipes 
 
 ### Introduction:
@@ -11,7 +13,7 @@ The initial dataframe that my project takes into account has shape (234429 rows 
 
 ### Cleaning and EDA:
 
-#### Data Cleaning
+#### Data Cleaning:
 Steps taken to clean dataset for EDA:<br>
 1. Grouping by recipe name and aggregating the average rating and number of ingredients for each recipe
 2. Changing the data type of number of ingredients from float to int, since it is not possible to have fractions of an ingredient (ex. 0.5 carrot is still considered 1 ingredient, not 0.5 ingredient)
@@ -30,18 +32,18 @@ Head of the dataframe after cleaning for analysis:
 |               4 |             5    | less          |
 
 
-#### Univariate Analysis
+#### Univariate Analysis:
 <iframe src="assets/ua2.html" width=800 height=600 frameBorder=0></iframe>
 
 The histogram shown above shows the distribution of the 'n_ingredients' column for univariate analysis. This plot is very interesting since it seems to follow a general normal bell curve, with a little right skew. 
 
-#### Bivariate Analysis
+#### Bivariate Analysis:
 <iframe src="assets/ba2.html" width=800 height=600 frameBorder=0></iframe>
 
 The above box plot shows the statistics for two groups (less vs. more ingredients) when compared by the values of average_ratings. The bivariate analysis is between the 'amount_ing' column, which was created according to the steps listed above, and the 'average_rating' column. 
 
 
-#### Interesting Aggregates
+#### Interesting Aggregates:
 
 Result of Pivot Table: (first column is n_ingredients)
 
@@ -56,20 +58,20 @@ Result of Pivot Table: (first column is n_ingredients)
 
 The above pivot table has index values of n_ingredients, not shown in table, column values of n_steps. The actual values in the table are aggregate means of average_ratings for each grouping of (n_ingredients, n_steps) in the pivot table. With this table, we can look at how average rating values change based on different number of steps and amount of ingredient used. 
 
-### Assessment of Missingness
+### Assessment of Missingness:
 
-#### NMAR Analysis
+#### NMAR Analysis:
 It is plausible that the 'rating' column in the dataset is NMAR (Not Missing at Random), since users who may have not been satisfied by a recipe, may tend to not leave a rating, hence the values are NaN and are dependent on the missing values themselves. Collecting data regarding whether or not someone would repeat the recipe or share the recipe may give way to MAR missingess, since it can be pausible that users who gave lower ratings are more likely not to share or repeat a recipe, compared to users who gave higher ratings. Hence, the missingness depends on the the new share/repeat data collected. 
 
-#### Missingness Dependency
+#### Missingness Dependency:
 
 After running missingness mechanism permutation tests, it can be concluded that the missingnes of values in the 'average_rating' column in the dataset does not depend on the 'minutes' column, since we fail to reject the null hypothesis in the permutation test. This relationship can also be shown via the horizantal barchart below, where you can see that there is no clear relationship between missing and not missing 'average_rating' values in comparison with several 'minute' values. 
 
 <iframe src="assets/miss2.html" width=800 height=600 frameBorder=0></iframe>
 
-### Hypothesis Testing
+### Hypothesis Testing:
 
-#### Running a Permutation Test
+#### Running a Permutation Test:
 
 Considering the main project question listed above, we can test this question by running a permutation test with the following hypotheses:
 
