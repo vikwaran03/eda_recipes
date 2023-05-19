@@ -17,6 +17,7 @@ Steps taken to clean dataset for EDA:<br>
 2. Changing the data type of number of ingredients from float to int, since it is not possible to have fractions of an ingredient (ex. 0.5 carrot is still considered 1 ingredient, not 0.5 ingredient)
 3. Rounding all values in average_rating to 2 decimal places for easier visualization
 4. Creating another column for analysis purposes, 'amount_ing', which bins the number of ingredients used in a recipe to either less (<= 9 ingredients total) or more (>9 ingredients total). This step is crucial for the comparison addressed in the main question by splitting the number of ingredients into two groups. 
+5. The only columns necessary for analysis is the 'n_ingredients', 'average_rating', and 'ingredients' column, and since these columns are all cleaned, there is no need to unnecessarily clean other columns since it is not required for analysis. 
 
 Head of the dataframe after cleaning for analysis:
 
@@ -58,15 +59,25 @@ The above pivot table has index values of n_ingredients, not shown in table, col
 ### Assessment of Missingness
 
 #### NMAR Analysis
+It is plausible that the 'rating' column in the dataset is NMAR (Not Missing at Random), since users who may have not been satisfied by a recipe, may tend to not leave a rating, hence the values are NaN and are dependent on the missing values themselves. Collecting data regarding whether or not someone would repeat the recipe or share the recipe may give way to MAR missingess, since it can be pausible that users who gave lower ratings are more likely not to share or repeat a recipe, compared to users who gave higher ratings. Hence, the missingness depends on the the new share/repeat data collected. 
 
 #### Missingness Dependency
+
+After running missingness mechanism permutation tests, it can be concluded that the missingnes of values in the 'average_rating' column in the dataset does not depend on the 'minutes' column, since we fail to reject the null hypothesis in the permutation test. This relationship can also be shown via the horizantal barchart below, where you can see that there is no clear relationship between missing and not missing 'average_rating' values in comparison with several 'minute' values. 
+
 <iframe src="assets/miss2.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Hypothesis Testing
 
 #### Running a Permutation Test
 
-TEXT
+Considering the main project question listed above, we can test this question by running a permutation test with the following hypotheses:
+
+Null Hypothesis: The proportion of recipes that use “less” ingredients have the same distribution of 5 star average ratings as recipes that use “more” ingredients, and any observed differences in our sample are due to random chance. 
+
+Alternative Hypothesis: The proportion of recipes that use “less” ingredients do not have the same distribution of 5 star average ratings as recipes that use “more” ingredients. Observed differences in our samples cannot be explained by random chance alone. 
+
+After running the permutation test according to the null hypothesis stated above, we fail to reject the null at alpha = 0.10 (10% significance level). The corresponding p-values is 0.984, which can be visualized by the histogram plotted below.
 
 <iframe src="assets/ptest.html" width=800 height=600 frameBorder=0></iframe>
 
