@@ -9,7 +9,7 @@ The dataset considered in this project is the result of merging two datasets tha
 <center> <i>Do recipes that require more ingredients tend to have higher average_ratings than recipes that require less ingredients?</i> </center><br>
 
 
-The initial dataframe that my project takes into account has shape (234429 rows × 18 columns), after merging. Of these 18 columns, my question is heavily on 3 columns: 'name' (recipe name), 'n_ingredients' (number of ingredients in recipe), and 'average_rating' (average rating of recipe). 
+The initial dataframe that my project takes into account has shape (234429 rows × 18 columns), after merging. Of these 18 columns, my question is heavily dependent on 3 columns: 'name' (recipe name), 'n_ingredients' (number of ingredients in recipe), and 'average_rating' (average rating of recipe). 
 
 ### Cleaning and EDA:
 
@@ -40,7 +40,7 @@ The histogram shown above shows the distribution of the 'n_ingredients' column f
 #### Bivariate Analysis:
 <iframe src="assets/ba2.html" width=800 height=600 frameBorder=0></iframe>
 
-The above box plot shows the statistics for two groups (less vs. more ingredients) when compared by the values of average_ratings. The bivariate analysis is between the 'amount_ing' column, which was created according to the steps listed above, and the 'average_rating' column. It seems as tho both groups seem to have somewhat of the same trend as seen by the similarities in the corresponding box plots. 
+The above box plot shows the statistics for two groups (less vs. more ingredients) when compared by the values of average_ratings. The bivariate analysis is between the 'amount_ing' column, which was created according to the steps listed above, and the 'average_rating' column. It seems as though both groups seem to have somewhat of the same trend as seen by the similarities in the corresponding box plots. 
 
 
 #### Interesting Aggregates:
@@ -56,12 +56,12 @@ Result of Pivot Table: (first column is n_ingredients)
 |         5 |   4.25    | 4.70573 | 4.6857  | 4.65083 | 4.60845 |
 
 
-The above pivot table has index values of n_ingredients, not shown in table, column values of n_steps. The actual values in the table are aggregate means of average_ratings for each grouping of (n_ingredients, n_steps) in the pivot table. With this table, we can look at how average rating values change based on different number of steps and amount of ingredient used. 
+The above pivot table has index values of n_ingredients, not shown in table, and column values of n_steps. The actual values in the table are aggregate means of average_ratings for each grouping of (n_ingredients, n_steps) in the pivot table. With this table, we can look at how average rating values change based on different number of steps and amount of ingredient used. 
 
 ### Assessment of Missingness:
 
 #### NMAR Analysis:
-It is plausible that the 'rating' column in the dataset is NMAR (Not Missing at Random), since users who may have not been satisfied by a recipe, may tend to not leave a rating, hence the values are NaN and are dependent on the missing values themselves. Collecting data regarding whether or not someone would repeat the recipe or share the recipe may give way to MAR missingess, since it can be pausible that users who gave lower ratings are more likely not to share or repeat a recipe, compared to users who gave higher ratings. Hence, the missingness depends on the the new share/repeat data collected. 
+It is plausible that the 'rating' column in the dataset is NMAR (Not Missing at Random), since users who may have not been satisfied by a recipe, may tend to not leave a rating, hence the values are NaN and are dependent on the missing values themselves. Collecting data regarding whether or not someone would repeat the recipe or share the recipe may give way to MAR missingess, since there is possibility that users who gave lower ratings are more likely not to share or repeat a recipe, compared to users who gave higher ratings. Hence, the missingness depends on the the new share/repeat data collected. 
 
 #### Missingness Dependency:
 
@@ -79,7 +79,7 @@ Null Hypothesis: The proportion of recipes that use “less” ingredients have 
 
 Alternative Hypothesis: The proportion of recipes that use “less” ingredients do not have the same distribution of 5 star average ratings as recipes that use “more” ingredients. Observed differences in our samples cannot be explained by random chance alone. 
 
-After running the permutation test according to the null hypothesis stated above, we fail to reject the null at alpha = 0.10 (10% significance level). The corresponding p-values is 0.984, which can be visualized by the histogram plotted below.
+After running the permutation test according to the null hypothesis stated above, we fail to reject the null at alpha = 0.10 (10% significance level). The corresponding p-values is 0.98, which can be visualized by the histogram plotted below.
 
 <iframe src="assets/ptest.html" width=800 height=600 frameBorder=0></iframe>
 
