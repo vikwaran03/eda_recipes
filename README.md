@@ -40,7 +40,7 @@ The histogram shown above shows the distribution of the 'n_ingredients' column f
 #### Bivariate Analysis:
 <iframe src="assets/ba2.html" width=800 height=600 frameBorder=0></iframe>
 
-The above box plot shows the statistics for two groups (less vs. more ingredients) when compared by the values of average_ratings. The bivariate analysis is between the 'amount_ing' column, which was created according to the steps listed above, and the 'average_rating' column. 
+The above box plot shows the statistics for two groups (less vs. more ingredients) when compared by the values of average_ratings. The bivariate analysis is between the 'amount_ing' column, which was created according to the steps listed above, and the 'average_rating' column. It seems as tho both groups seem to have somewhat of the same trend as seen by the similarities in the corresponding box plots. 
 
 
 #### Interesting Aggregates:
